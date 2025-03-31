@@ -230,8 +230,11 @@ if (window.location.pathname.includes('tree-detail.html')) {
     document.addEventListener('DOMContentLoaded', () => {
         loadData();
         document.querySelectorAll('.tree').forEach(tree => {
+            const treeId = tree.getAttribute('data-tree-id');
+            const treeName = treesData[treeId].customName || `木 ${treeId}`;
+            tree.querySelector('p').textContent = treeName;
+            
             tree.addEventListener('click', () => {
-                const treeId = tree.getAttribute('data-tree-id');
                 showTreeDetails(treeId);
             });
         });
