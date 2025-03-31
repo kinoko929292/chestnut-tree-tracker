@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栗の木成長記録 - 詳細</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="tree-title">栗の木成長記録</h1>
+        <button id="back-button" class="back-button">← 戻る</button>
+    </header>
+    <main class="detail-container">
+        <section class="tree-info">
+            <img id="tree-image" src="images/tree-placeholder.png" alt="栗の木">
+            <h2 id="tree-name">木 1</h2>
+            <form id="name-form" class="name-form">
+                <div class="form-group">
+                    <label for="custom-name">木の名前</label>
+                    <input type="text" id="custom-name" placeholder="例: 庭の大きな栗の木">
+                    <button type="submit" class="save-name-button">保存</button>
+                </div>
+            </form>
+        </section>
+        
+        <section class="records-section">
+            <h3>成長記録</h3>
+            <div id="records-list" class="records-list">
+                <!-- 記録がここに動的に追加されます -->
+            </div>
+            
+            <form id="record-form" class="record-form">
+                <h3>新しい記録を追加</h3>
+                <div class="form-group">
+                    <label for="record-date">日付</label>
+                    <input type="date" id="record-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="record-text">成長記録</label>
+                    <textarea id="record-text" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="record-fertilizer">施肥</label>
+                    <input type="text" id="record-fertilizer">
+                </div>
+                <div class="form-group">
+                    <label for="record-photo">写真</label>
+                    <input type="file" id="record-photo" accept="image/*">
+                </div>
+                <button type="submit" class="submit-button">記録を追加</button>
+            </form>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
