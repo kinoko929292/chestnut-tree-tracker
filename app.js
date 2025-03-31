@@ -232,6 +232,12 @@ if (window.location.pathname.includes('tree-detail.html')) {
         document.querySelectorAll('.tree').forEach(tree => {
             const treeId = tree.getAttribute('data-tree-id');
             const treeName = treesData[treeId].customName || `木 ${treeId}`;
+            const treeImg = tree.querySelector('img');
+            treeImg.src = `images/tree${treeId}.png`;
+            treeImg.onerror = function() {
+                this.src = 'images/tree-placeholder.png';
+            };
+            
             tree.querySelector('p').textContent = treeName;
             
             tree.addEventListener('click', () => {
